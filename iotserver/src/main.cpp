@@ -1,7 +1,6 @@
-#include <app_hal.h>
-#include <lv_examples.h>
-#include <lv_demos.h>
+// #include <app_hal.h>
 #include <lvgl.h>
+#include <lv_examples.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,15 +40,36 @@
 //     return 0;
 // }
 
-int main(void)
+// int main(void)
+// {
+// 	lv_init();
+
+// 	// hal_setup();
+
+// 	  lv_example_get_started_1();
+
+// //   lv_demo_widgets();
+
+// 	// hal_loop();
+// }
+
+int main(int argc, char ** argv)
 {
-	lv_init();
+#if LV_USE_LINUX_FBDEV
+	lv_display_t * disp = lv_linux_fbdev_create();
+	lv_linux_fbdev_set_file(disp, "/dev/fb0");
+#endif
 
-	hal_setup();
+#if LV_USE_X11
+  lv_display_t * disp = lv_x11_window_create("LVGL X11 Simulation", 480, 320);
+  lv_x11_inputs_create(disp, NULL);
+#endif
 
-  lv_example_get_started_1();
+  while(true)
+  {
+    lv_timer_handler();
+    usleep(5000);
+  }
 
-  lv_demo_widgets();
-
-	hal_loop();
+  return 0;
 }
