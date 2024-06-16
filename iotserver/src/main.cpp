@@ -67,6 +67,10 @@ int main(int argc, char ** argv)
   lv_x11_inputs_create(disp, NULL);
 #endif
 
+#if LV_USE_SDL
+  lv_display_t * disp = lv_sdl_window_create(480, 320);
+#endif
+
   lv_example_get_started_1();
 
   while(true)
