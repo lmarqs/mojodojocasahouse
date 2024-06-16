@@ -1,5 +1,7 @@
-#include <lv_demos.h>
-#include <lv_examples.h>
+#include <lvgl.h>
+// #include <lv_demos.h>
+// #include <lv_examples.h>
+#include "IMG_8282.jpg.h"
 
 int main(int argc, char **argv)
 {
@@ -22,7 +24,22 @@ int main(int argc, char **argv)
   // lv_example_get_started_1();
   // lv_demo_render(LV_DEMO_RENDER_SCENE_IMAGE_NORMAL, LV_OPA_COVER);
   // lv_demo_music();
-  lv_demo_benchmark();
+  // lv_demo_benchmark();
+
+  lv_image_dsc_t IMG_8282;
+
+  IMG_8282.header.cf = LV_COLOR_FORMAT_RGB565;
+  IMG_8282.header.magic = LV_IMAGE_HEADER_MAGIC;
+  IMG_8282.header.w = 1185;
+  IMG_8282.header.h = 889;
+  IMG_8282.data_size = 1053465 * 2;
+  IMG_8282.data = IMG_8282_map;
+
+  lv_obj_t * img = lv_image_create(lv_screen_active());
+
+  lv_image_set_src(img, &IMG_8282);
+
+  lv_obj_center(img);
 
   while (true)
   {
