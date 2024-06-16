@@ -12,15 +12,17 @@ int main(int argc, char **argv)
 
 #if LV_USE_X11
   lv_display_t *disp = lv_x11_window_create("LVGL X11 Simulation", 480, 320);
-  // lv_x11_inputs_create(disp, NULL);
 #endif
 
 #if LV_USE_SDL
   lv_display_t *disp = lv_sdl_window_create(480, 320);
 #endif
 
+  // lv_example_style_6();
   // lv_example_get_started_1();
-  lv_demo_render(LV_DEMO_RENDER_SCENE_IMAGE_NORMAL, LV_OPA_COVER);
+  // lv_demo_render(LV_DEMO_RENDER_SCENE_IMAGE_NORMAL, LV_OPA_COVER);
+  // lv_demo_music();
+  lv_demo_benchmark();
 
   while (true)
   {
