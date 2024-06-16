@@ -4,7 +4,7 @@ An IOT playground
 
 # Stack:
 - Raspberry Pi
-- lvgl
+- LVGL
 - IOTStack
 - Grafana
 - MQTT (mosquitto)
