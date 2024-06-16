@@ -26,9 +26,6 @@
     #warning "It's recommended to have at least 128kB RAM for the benchmark"
 #endif
 
-#include "../../src/display/lv_display_private.h"
-#include "../../src/core/lv_global.h"
-
 /**********************
  *      TYPEDEFS
  **********************/
