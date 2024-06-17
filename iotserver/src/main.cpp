@@ -1,7 +1,7 @@
 #include <lvgl.h>
 // #include <lv_demos.h>
-// #include <lv_examples.h>
-#include "IMG_8282.jpg.h"
+#include <lv_examples.h>
+#include "IMG_8282_cropped.jpg.c"
 
 int main(int argc, char **argv)
 {
@@ -26,20 +26,18 @@ int main(int argc, char **argv)
   // lv_demo_music();
   // lv_demo_benchmark();
 
-  lv_image_dsc_t IMG_8282;
+  lv_image_dsc_t IMG_8282_cropped;
 
-  IMG_8282.header.cf = LV_COLOR_FORMAT_RGB565A8;
-  IMG_8282.header.magic = LV_IMAGE_HEADER_MAGIC;
-  IMG_8282.header.w = 480;
-  IMG_8282.header.h = 360;
-  IMG_8282.data_size = 172800 * 2;
-  IMG_8282.data = IMG_8282_map;
+  IMG_8282_cropped.header.cf = LV_COLOR_FORMAT_RGB565;
+  IMG_8282_cropped.header.magic = LV_IMAGE_HEADER_MAGIC;
+  IMG_8282_cropped.header.w = 100;
+  IMG_8282_cropped.header.h = 75;
+  IMG_8282_cropped.data_size = 7500 * 4;
+  IMG_8282_cropped.data = IMG_8282_cropped_map;
 
-  lv_obj_t * img = lv_image_create(lv_screen_active());
-
-  lv_image_set_src(img, &IMG_8282);
-
-  lv_obj_center(img);
+  lv_obj_t * img1 = lv_image_create(lv_screen_active());
+  lv_image_set_src(img1, &IMG_8282_cropped);
+  // lv_obj_align(img1, LV_ALIGN_CENTER, 0, 0);
 
   while (true)
   {
