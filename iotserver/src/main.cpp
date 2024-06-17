@@ -1,7 +1,7 @@
 #include <lvgl.h>
 // #include <lv_demos.h>
 #include <lv_examples.h>
-#include "IMG_8282_cropped.jpg.c"
+#include "IMG_8282_cropped.c"
 
 int main(int argc, char **argv)
 {
@@ -26,7 +26,14 @@ int main(int argc, char **argv)
   // lv_demo_music();
   // lv_demo_benchmark();
 
-  LV_IMG_DECLARE(IMG_8282_cropped);
+  lv_image_dsc_t IMG_8282_cropped = {};
+
+  IMG_8282_cropped.header.cf = LV_COLOR_FORMAT_ARGB8888;
+  IMG_8282_cropped.header.magic = LV_IMAGE_HEADER_MAGIC;
+  IMG_8282_cropped.header.w = 100;
+  IMG_8282_cropped.header.h = 75;
+  IMG_8282_cropped.data_size = 7500 * 4;
+  IMG_8282_cropped.data = IMG_8282_cropped_map;
 
   lv_obj_t * img1 = lv_image_create(lv_screen_active());
   lv_image_set_src(img1, &IMG_8282_cropped);
