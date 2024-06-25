@@ -1,7 +1,8 @@
 #include <lvgl.h>
 // #include <lv_demos.h>
-#include <lv_examples.h>
-#include "IMG_8282_small.c"
+// #include <lv_examples.h>
+// #include "IMG_8282_small.c"
+#include "lvgl_clock.h"
 
 int main(int argc, char **argv)
 {
@@ -26,18 +27,20 @@ int main(int argc, char **argv)
   // lv_demo_music();
   // lv_demo_benchmark();
 
-  lv_image_dsc_t IMG_8282_small = {};
+  // lv_image_dsc_t IMG_8282_small = {};
 
-  IMG_8282_small.header.cf = LV_COLOR_FORMAT_RGB565;
-  IMG_8282_small.header.magic = LV_IMAGE_HEADER_MAGIC;
-  IMG_8282_small.header.w = 427;
-  IMG_8282_small.header.h = 320;
-  IMG_8282_small.data_size = 136640 * 2;
-  IMG_8282_small.data = IMG_8282_small_map;
+  // IMG_8282_small.header.cf = LV_COLOR_FORMAT_RGB565;
+  // IMG_8282_small.header.magic = LV_IMAGE_HEADER_MAGIC;
+  // IMG_8282_small.header.w = 427;
+  // IMG_8282_small.header.h = 320;
+  // IMG_8282_small.data_size = 136640 * 2;
+  // IMG_8282_small.data = IMG_8282_small_map;
 
-  lv_obj_t * img1 = lv_image_create(lv_screen_active());
-  lv_image_set_src(img1, &IMG_8282_small);
-  lv_obj_align(img1, LV_ALIGN_CENTER, 0, 0);
+  // lv_obj_t * img1 = lv_image_create(lv_screen_active());
+  // lv_image_set_src(img1, &IMG_8282_small);
+  // lv_obj_align(img1, LV_ALIGN_CENTER, 0, 0);
+
+  lv_example_scale_6();
 
   while (true)
   {
