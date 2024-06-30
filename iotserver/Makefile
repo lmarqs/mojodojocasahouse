@@ -4,14 +4,15 @@ build:
 	pio run -e raspberrypi_3b_fbdev
 
 install:
-	cp .pio/build/raspberrypi_3b_fbdev/program /bin/iotserver
-	chown root:root /bin/iotserver
-
 	cp etc/systemd/system/iotserver.service /etc/systemd/system/iotserver.service
 	chown root:root /etc/systemd/system/iotserver.service
 
 	systemctl daemon-reload
 	systemctl stop iotserver.service
+
+	cp .pio/build/raspberrypi_3b_fbdev/program /bin/iotserver
+	chown root:root /bin/iotserver
+
 	systemctl start iotserver.service
 	systemctl enable iotserver.service
 
