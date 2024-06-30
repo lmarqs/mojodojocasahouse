@@ -67,3 +67,7 @@ hdmi_drive=2
 
 # speedup boost
 enable_uart=0
+
+# shutdown
+dtoverlay=gpio-shutdown,gpio_pin=16
+# dtoverlay=gpio-poweroff,gpiopin=24,active_low=0
