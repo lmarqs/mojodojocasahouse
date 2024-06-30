@@ -55,7 +55,7 @@ dtparam=i2c_arm=on
 dtparam=spi=on
 
 # setup overlay
-dtoverlay=tft35a:rotate=90
+dtoverlay=tft35a:rotate=270
 
 # enable framebuffer device
 hdmi_force_hotplug=1
