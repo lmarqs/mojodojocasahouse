@@ -4,6 +4,8 @@ build:
 	pio run -e raspberrypi_3b_fbdev
 
 install:
+	killall iotserver
+
 	cp .pio/build/raspberrypi_3b_fbdev/program /bin/iotserver
 	chown root:root /bin/iotserver
 
@@ -15,3 +17,5 @@ install:
 
 	cp boot/overlays/tft35a.dtb /boot/overlays/tft35a.dtb
 	chown root:root /boot/overlays/tft35a.dtb
+
+	iotserver &
