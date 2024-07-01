@@ -3,21 +3,21 @@
 #include <stdlib.h>
 #include <time.h>
 
-static time_t current_time_epoch;
-static char current_time_str[64];
-
 lv_span_t *span;
 
 static void timer_cb(lv_timer_t *timer)
 {
+  static time_t current_time_epoch;
 
   time(&current_time_epoch);
 
+  static char text[64];
+
   tm *current_time_breakdown = localtime(&current_time_epoch);
 
-  strftime(current_time_str, sizeof(current_time_str), "%c", current_time_breakdown);
+  strftime(text, sizeof(text), "%a %d/%m/%y\n%H:%M:%S", current_time_breakdown);
 
-  lv_span_set_text(span, current_time_str);
+  lv_span_set_text(span, text);
 }
 
 int main(int argc, char **argv)
@@ -56,8 +56,9 @@ int main(int argc, char **argv)
 
   span = lv_spangroup_new_span(spans);
   lv_span_set_text(span, "");
-#if LV_FONT_MONTSERRAT_32
-  lv_style_set_text_font(&span->style,  &lv_font_montserrat_32);
+
+#if LV_FONT_MONTSERRAT_48
+  lv_style_set_text_font(&span->style,  &lv_font_montserrat_48);
 #endif
   // lv_style_set_text_font(&span->style,  LV_FONT_UNSCII_16);
   // lv_style_set_text_color(&span->style, lv_palette_main(LV_PALETTE_RED));
