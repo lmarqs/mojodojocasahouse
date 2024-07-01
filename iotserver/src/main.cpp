@@ -1,8 +1,24 @@
 #include <lvgl.h>
-// #include <lv_demos.h>
-// #include <lv_examples.h>
-// #include "IMG_8282_small.c"
-#include "lvgl_clock.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+static time_t current_time_epoch;
+static char current_time_str[64];
+
+lv_span_t *span;
+
+static void timer_cb(lv_timer_t *timer)
+{
+
+  time(&current_time_epoch);
+
+  tm *current_time_breakdown = localtime(&current_time_epoch);
+
+  strftime(current_time_str, sizeof(current_time_str), "%c", current_time_breakdown);
+
+  lv_span_set_text(span, current_time_str);
+}
 
 int main(int argc, char **argv)
 {
@@ -21,26 +37,34 @@ int main(int argc, char **argv)
   lv_display_t *disp = lv_sdl_window_create(480, 320);
 #endif
 
-  // lv_example_style_6();
-  // lv_example_get_started_1();
-  // lv_demo_render(LV_DEMO_RENDER_SCENE_IMAGE_NORMAL, LV_OPA_COVER);
-  // lv_demo_music();
-  // lv_demo_benchmark();
+  static lv_style_t style;
+  lv_style_init(&style);
+  // lv_style_set_border_width(&style, 1);
+  // lv_style_set_border_color(&style, lv_palette_main(LV_PALETTE_ORANGE));
+  // lv_style_set_pad_all(&style, 2);
 
-  // lv_image_dsc_t IMG_8282_small = {};
+  lv_obj_t *spans = lv_spangroup_create(lv_screen_active());
+  lv_obj_set_width(spans, 480);
+  lv_obj_set_height(spans, 320);
+  lv_obj_center(spans);
+  lv_obj_add_style(spans, &style, 0);
 
-  // IMG_8282_small.header.cf = LV_COLOR_FORMAT_RGB565;
-  // IMG_8282_small.header.magic = LV_IMAGE_HEADER_MAGIC;
-  // IMG_8282_small.header.w = 427;
-  // IMG_8282_small.header.h = 320;
-  // IMG_8282_small.data_size = 136640 * 2;
-  // IMG_8282_small.data = IMG_8282_small_map;
+  lv_spangroup_set_align(spans, LV_TEXT_ALIGN_CENTER);
+  // lv_spangroup_set_overflow(spans, LV_SPAN_OVERFLOW_CLIP);
+  lv_spangroup_set_indent(spans, 20);
+  lv_spangroup_set_mode(spans, LV_SPAN_MODE_BREAK);
 
-  // lv_obj_t * img1 = lv_image_create(lv_screen_active());
-  // lv_image_set_src(img1, &IMG_8282_small);
-  // lv_obj_align(img1, LV_ALIGN_CENTER, 0, 0);
+  span = lv_spangroup_new_span(spans);
+  lv_span_set_text(span, "");
+#if LV_FONT_MONTSERRAT_32
+  lv_style_set_text_font(&span->style,  &lv_font_montserrat_32);
+#endif
+  // lv_style_set_text_font(&span->style,  LV_FONT_UNSCII_16);
+  // lv_style_set_text_color(&span->style, lv_palette_main(LV_PALETTE_RED));
+  // lv_style_set_text_decor(&span->style, LV_TEXT_DECOR_UNDERLINE);
+  // lv_style_set_text_opa(&span->style, LV_OPA_50);
 
-  lv_example_scale_6();
+  lv_timer_create(timer_cb, 1000, NULL);
 
   while (true)
   {

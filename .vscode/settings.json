@@ -8,6 +8,9 @@
     "string_view": "cpp",
     "initializer_list": "cpp",
     "cstddef": "cpp",
-    "lv_global.h": "c"
+    "lv_global.h": "c",
+    "lv_demo_keypad_encoder.h": "c",
+    "img_8282_cropped.jpg.c": "cpp",
+    "time.h": "c"
   }
 }
