@@ -1,0 +1,3 @@
+[submodule "iotserver/LCD-show"]
+	path = iotserver/LCD-show
+	url = https://github.com/goodtft/LCD-show
