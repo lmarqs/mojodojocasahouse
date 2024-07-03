@@ -17,16 +17,3 @@ install:
 
 	sudo systemctl enable iotserver.service
 	sudo systemctl start iotserver.service
-
-	sudo cp boot/firmware/config.txt boot/firmware/config.txt.$(date +%s).bak
-	sudo cp boot/firmware/config.txt /boot/firmware/config.txt
-	sudo chown root:root /boot/firmware/config.txt
-
-	sudo cp boot/overlays/tft35a.dtb /boot/overlays/tft35a.dtb
-	sudo chown root:root /boot/overlays/tft35a.dtb
-
-increase-swap:
-	sudo dphys-swapfile swapoff
-	sudo sed -i 's/CONF_SWAPSIZE=100/CONF_SWAPSIZE=2048/g' /etc/dphys-swapfile
-	sudo dphys-swapfile setup
-	sudo dphys-swapfile swapon
