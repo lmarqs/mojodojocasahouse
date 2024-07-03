@@ -18,6 +18,7 @@ install:
 	sudo systemctl enable iotserver.service
 	sudo systemctl start iotserver.service
 
+	sudo cp boot/firmware/config.txt boot/firmware/config.txt.$(date +%s).bak
 	sudo cp boot/firmware/config.txt /boot/firmware/config.txt
 	sudo chown root:root /boot/firmware/config.txt
 
