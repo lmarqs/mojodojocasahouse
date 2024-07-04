@@ -2,8 +2,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <DHT.h>
+#include <DHT_U.h>
 
 lv_span_t *span;
+
+DHT_Unified dht(17, DHT11);
+
+void read_sensors()
+{
+  sensors_event_t event;
+
+  dht.temperature().getEvent(&event);
+  
+  if (isnan(event.temperature))
+  {
+    Serial.println("Error reading temperature!");
+  }
+  else
+  {
+    Serial.print("Temperature: ");
+    Serial.print(event.relative_humidity);
+    Serial.println(" C");
+  }
+
+  dht.humidity().getEvent(&event);
+
+  if (isnan(event.relative_humidity))
+  {
+    Serial.println("Error reading humidity!");
+  }
+  else
+  {
+    Serial.print("Humidity: ");
+    Serial.print(event.relative_humidity);
+    Serial.println("%");
+  }
+}
 
 static void timer_cb(lv_timer_t *timer)
 {
@@ -20,10 +55,17 @@ static void timer_cb(lv_timer_t *timer)
   lv_span_set_text(span, text);
 }
 
+void loop()
+{
+  lv_timer_handler();
+  read_sensors();
+}
+
 int main(int argc, char **argv)
 {
   lv_init();
 
+  dht.begin();
 #if LV_USE_LINUX_FBDEV
   lv_display_t *disp = lv_linux_fbdev_create();
   lv_linux_fbdev_set_file(disp, "/dev/fb1");
@@ -69,7 +111,7 @@ int main(int argc, char **argv)
 
   while (true)
   {
-    lv_timer_handler();
+    loop();
   }
 
   return 0;
