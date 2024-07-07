@@ -85,7 +85,7 @@ void home_digital_clock_timer(lv_timer_t *timer)
     clock_count_24(&home_digital_clock_hour_value, &home_digital_clock_min_value, &home_digital_clock_sec_value);
     if (lv_obj_is_valid(guider_ui.home_digital_clock))
     {
-        lv_dclock_set_text_fmt(guider_ui.home_digital_clock, "%d:%02d:%02d", home_digital_clock_hour_value, home_digital_clock_min_value, home_digital_clock_sec_value);
+        lv_dclock_set_text_fmt(guider_ui.home_digital_clock, "%d:%02d", home_digital_clock_hour_value, home_digital_clock_min_value);
     }
 }
 

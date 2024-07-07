@@ -1,1 +1,1 @@
-GEN_CSRCS += _bg_weather_day_cloudy_alpha_1024x320.c _bg_weather_day_clear_alpha_1024x320.c
+GEN_CSRCS += _bg_weather_day_clear_alpha_1024x320.c _bg_weather_day_cloudy_alpha_1024x320.c
