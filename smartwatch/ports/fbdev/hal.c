@@ -66,7 +66,7 @@ void hal_loop(void)
   while (true)
   {
     lv_timer_handler();
-    lv_tick_inc(5);
+    // lv_tick_inc(5);
     usleep(5000);
   }
 }
