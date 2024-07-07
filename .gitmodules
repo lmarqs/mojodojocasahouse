@@ -1,3 +1,11 @@
 [submodule "LCD-show"]
 	path = LCD-show
 	url = https://github.com/goodtft/LCD-show.git
+
+[submodule "smartwatch/lvgl"]
+	path = smartwatch/lvgl
+	url = https://github.com/lvgl/lvgl.git
+
+[submodule "smartwatch/lv_drivers"]
+	path = smartwatch/lv_drivers
+	url = https://github.com/lvgl/lv_drivers.git
