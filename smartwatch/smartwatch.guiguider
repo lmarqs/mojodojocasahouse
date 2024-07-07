@@ -340,7 +340,7 @@
 					"use_fs": false,
 					"fs_type": "flash",
 					"sd_path": "",
-					"img_path": "\\\\wsl.localhost\\Ubuntu\\home\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\import\\image\\bg_weather_day_clear.jpg",
+					"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\import\\image\\bg_weather_day_clear.jpg",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -831,7 +831,7 @@
 							320
 						],
 						"default_style": false,
-						"img_path": "\\\\wsl.localhost\\Ubuntu\\home\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\import\\image\\bg_weather_day_clear.jpg",
+						"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\import\\image\\bg_weather_day_clear.jpg",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
