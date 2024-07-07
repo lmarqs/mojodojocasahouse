@@ -21,7 +21,7 @@ static int sdl_hal_tick_thread(void *data)
 
 void hal_setup(void)
 {
-  LV_LOG_USER("Starting SDL HAL: %dx%d", SDL_HOR_RES, SDL_VER_RES);
+  LV_LOG_USER("[SDL] hal_setup: %dx%d", SDL_HOR_RES, SDL_VER_RES);
 // Workaround for sdl2 `-m32` crash
 // https://bugs.launchpad.net/ubuntu/+source/libsdl2/+bug/1775067/comments/7
 #ifndef WIN32
@@ -50,6 +50,8 @@ void hal_setup(void)
 
 void hal_loop(void)
 {
+  LV_LOG_USER("[SDL] hal_loop");
+
   while (true)
   {
     SDL_Delay(5);
