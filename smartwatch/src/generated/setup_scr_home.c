@@ -16,9 +16,6 @@
 
 
 
-int home_digital_clock_min_value = 0;
-int home_digital_clock_hour_value = 0;
-int home_digital_clock_sec_value = 0;
 void setup_scr_home(lv_ui *ui)
 {
 	//Write codes home
@@ -112,35 +109,11 @@ void setup_scr_home(lv_ui *ui)
 	lv_obj_set_style_pad_right(ui->home_content, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->home_content, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes home_digital_clock
-	static bool home_digital_clock_timer_enabled = false;
-	ui->home_digital_clock = lv_dclock_create(ui->home_content, "0:00");
-	if (!home_digital_clock_timer_enabled) {
-		lv_timer_create(home_digital_clock_timer, 1000, NULL);
-		home_digital_clock_timer_enabled = true;
-	}
-	lv_obj_set_pos(ui->home_digital_clock, 117, 10);
-	lv_obj_set_size(ui->home_digital_clock, 346, 127);
-
-	//Write style for home_digital_clock, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_radius(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->home_digital_clock, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->home_digital_clock, &lv_font_montserratMedium_120, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_opa(ui->home_digital_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_letter_space(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_align(ui->home_digital_clock, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_top(ui->home_digital_clock, 7, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_right(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_bottom(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_left(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
 	//Write codes home_label_temp
 	ui->home_label_temp = lv_label_create(ui->home_content);
 	lv_label_set_text(ui->home_label_temp, "0°");
 	lv_label_set_long_mode(ui->home_label_temp, LV_LABEL_LONG_CLIP);
-	lv_obj_set_pos(ui->home_label_temp, 24, 205);
+	lv_obj_set_pos(ui->home_label_temp, 13, 210);
 	lv_obj_set_size(ui->home_label_temp, 140, 80);
 
 	//Write style for home_label_temp, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -158,6 +131,52 @@ void setup_scr_home(lv_ui *ui)
 	lv_obj_set_style_pad_bottom(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes home_label_clock
+	ui->home_label_clock = lv_label_create(ui->home_content);
+	lv_label_set_text(ui->home_label_clock, "00:00");
+	lv_label_set_long_mode(ui->home_label_clock, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->home_label_clock, 85, 18);
+	lv_obj_set_size(ui->home_label_clock, 384, 121);
+
+	//Write style for home_label_clock, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->home_label_clock, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_label_clock, &lv_font_montserratMedium_120, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->home_label_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->home_label_clock, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->home_label_clock, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes home_label_calendar
+	ui->home_label_calendar = lv_label_create(ui->home_content);
+	lv_label_set_text(ui->home_label_calendar, "Sun 01/01/00");
+	lv_label_set_long_mode(ui->home_label_calendar, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->home_label_calendar, 137, 147);
+	lv_obj_set_size(ui->home_label_calendar, 332, 45);
+
+	//Write style for home_label_calendar, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->home_label_calendar, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_label_calendar, &lv_font_montserratMedium_40, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->home_label_calendar, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->home_label_calendar, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->home_label_calendar, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//The custom code of home.
 	

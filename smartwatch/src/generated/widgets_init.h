@@ -23,7 +23,6 @@ void clock_count(int *hour, int *min, int *sec);
 #endif
 
 
-void home_digital_clock_timer(lv_timer_t *timer);
 
 #ifdef __cplusplus
 }
