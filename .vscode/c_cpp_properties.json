@@ -6,8 +6,13 @@
         "${workspaceFolder}/**"
       ],
       "defines": [
+<<<<<<< HEAD
         "USE_SDL=1",
         "USE_FBDEV=1"
+=======
+        "LV_USE_FB_DEV=1",
+        "LV_USE_SDL=1"
+>>>>>>> 2108f77 (add clock)
       ],
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu23",

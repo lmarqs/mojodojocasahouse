@@ -16,6 +16,9 @@
 
 
 
+int home_digital_clock_min_value = 38;
+int home_digital_clock_hour_value = 19;
+int home_digital_clock_sec_value = 5;
 void setup_scr_home(lv_ui *ui)
 {
 	//Write codes home
@@ -28,18 +31,79 @@ void setup_scr_home(lv_ui *ui)
 	lv_obj_set_style_bg_color(ui->home, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_grad_dir(ui->home, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes home_bg_weather
-	ui->home_bg_weather = lv_img_create(ui->home);
-	lv_obj_add_flag(ui->home_bg_weather, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->home_bg_weather, &_bg_weather_day_clear_alpha_1024x320);
-	lv_img_set_pivot(ui->home_bg_weather, 50,50);
-	lv_img_set_angle(ui->home_bg_weather, 0);
-	lv_obj_set_pos(ui->home_bg_weather, 0, 0);
-	lv_obj_set_size(ui->home_bg_weather, 1024, 320);
-	lv_obj_add_flag(ui->home_bg_weather, LV_OBJ_FLAG_FLOATING);
+	//Write codes home_background
+	ui->home_background = lv_obj_create(ui->home);
+	lv_obj_set_pos(ui->home_background, 0, 0);
+	lv_obj_set_size(ui->home_background, 1024, 320);
+	lv_obj_set_scrollbar_mode(ui->home_background, LV_SCROLLBAR_MODE_OFF);
+	lv_obj_add_flag(ui->home_background, LV_OBJ_FLAG_FLOATING);
 
-	//Write style for home_bg_weather, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->home_bg_weather, 206, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for home_background, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->home_background, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui->home_background, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui->home_background, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui->home_background, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->home_background, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->home_background, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->home_background, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->home_background, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->home_background, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->home_background, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->home_background, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->home_background, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->home_background, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes home_bg_weather_day_cloudy
+	ui->home_bg_weather_day_cloudy = lv_img_create(ui->home_background);
+	lv_obj_add_flag(ui->home_bg_weather_day_cloudy, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->home_bg_weather_day_cloudy, &_bg_weather_day_cloudy_alpha_1024x320);
+	lv_img_set_pivot(ui->home_bg_weather_day_cloudy, 50,50);
+	lv_img_set_angle(ui->home_bg_weather_day_cloudy, 0);
+	lv_obj_set_pos(ui->home_bg_weather_day_cloudy, 0, 0);
+	lv_obj_set_size(ui->home_bg_weather_day_cloudy, 1024, 320);
+	lv_obj_add_flag(ui->home_bg_weather_day_cloudy, LV_OBJ_FLAG_FLOATING);
+
+	//Write style for home_bg_weather_day_cloudy, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->home_bg_weather_day_cloudy, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes home_bg_weather_day_clear
+	ui->home_bg_weather_day_clear = lv_img_create(ui->home_background);
+	lv_obj_add_flag(ui->home_bg_weather_day_clear, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->home_bg_weather_day_clear, &_bg_weather_day_clear_alpha_1024x320);
+	lv_img_set_pivot(ui->home_bg_weather_day_clear, 50,50);
+	lv_img_set_angle(ui->home_bg_weather_day_clear, 0);
+	lv_obj_set_pos(ui->home_bg_weather_day_clear, 0, 0);
+	lv_obj_set_size(ui->home_bg_weather_day_clear, 1024, 320);
+	lv_obj_add_flag(ui->home_bg_weather_day_clear, LV_OBJ_FLAG_FLOATING);
+
+	//Write style for home_bg_weather_day_clear, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->home_bg_weather_day_clear, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes home_digital_clock
+	static bool home_digital_clock_timer_enabled = false;
+	ui->home_digital_clock = lv_dclock_create(ui->home, "19:38:05");
+	if (!home_digital_clock_timer_enabled) {
+		lv_timer_create(home_digital_clock_timer, 1000, NULL);
+		home_digital_clock_timer_enabled = true;
+	}
+	lv_obj_set_pos(ui->home_digital_clock, 75, 15);
+	lv_obj_set_size(ui->home_digital_clock, 546, 139);
+
+	//Write style for home_digital_clock, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_radius(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->home_digital_clock, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_digital_clock, &lv_font_montserratMedium_120, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->home_digital_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->home_digital_clock, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->home_digital_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->home_digital_clock, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->home_digital_clock, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->home_digital_clock, 7, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->home_digital_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes home_label_temp
 	ui->home_label_temp = lv_label_create(ui->home);

@@ -325,9 +325,90 @@
 					]
 				},
 				{
-					"name": "bg_weather",
-					"id": "x04p9fdy",
-					"type": "img",
+					"name": "digital_clock",
+					"id": "ciyi05x8",
+					"type": "digital_clock",
+					"left": 75,
+					"top": 15,
+					"visible": true,
+					"flag": [],
+					"width": 546,
+					"height": 139,
+					"default_style": false,
+					"inital_time": "19:38:05",
+					"show_second": true,
+					"use_ampm": false,
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"radius": 0,
+							"text_align": "LV_TEXT_ALIGN_CENTER",
+							"text_color": "#ffffff",
+							"font": 120,
+							"font_family": "montserratMedium",
+							"letter_space": 0,
+							"bg_color": "#000000",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_dither_mode": "LV_DITHER_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"padding_top": 7,
+							"padding_right": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 170,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DISABLED",
+							"disable": true,
+							"radius": 0,
+							"text_align": "LV_TEXT_ALIGN_CENTER",
+							"text_color": "#ffffff",
+							"font": 16,
+							"font_family": "montserratMedium",
+							"letter_space": 0,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 255,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_dither_mode": "LV_DITHER_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"padding_top": 7,
+							"padding_right": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0
+						}
+					]
+				},
+				{
+					"name": "background",
+					"id": "b0u4mffx",
+					"type": "cont",
 					"left": 0,
 					"top": 0,
 					"visible": true,
@@ -337,22 +418,106 @@
 					"width": 1024,
 					"height": 320,
 					"default_style": false,
-					"use_fs": false,
-					"fs_type": "flash",
-					"sd_path": "",
-					"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\import\\image\\bg_weather_day_clear.jpg",
-					"rotate": 0,
-					"x": 50,
-					"y": 50,
-					"color_format": "true-color-alpha",
+					"scrollbar_mode": "OFF",
+					"child": [
+						{
+							"name": "bg_weather_day_clear",
+							"id": "xbebxdyb",
+							"type": "img",
+							"left": 0,
+							"top": 0,
+							"visible": true,
+							"flag": [
+								"LV_OBJ_FLAG_FLOATING"
+							],
+							"width": 1024,
+							"height": 320,
+							"default_style": false,
+							"use_fs": false,
+							"fs_type": "flash",
+							"sd_path": "",
+							"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\src\\import\\image\\bg_weather_day_clear.jpg",
+							"rotate": 0,
+							"x": 50,
+							"y": 50,
+							"color_format": "true-color-alpha",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"image_recolor": "#ffffff",
+									"image_recolor_opa": 0,
+									"image_opa": 255
+								}
+							]
+						},
+						{
+							"name": "bg_weather_day_cloudy",
+							"id": "x04p9fdy",
+							"type": "img",
+							"left": 0,
+							"top": 0,
+							"visible": true,
+							"flag": [
+								"LV_OBJ_FLAG_FLOATING"
+							],
+							"width": 1024,
+							"height": 320,
+							"default_style": false,
+							"use_fs": false,
+							"fs_type": "flash",
+							"sd_path": "",
+							"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\src\\import\\image\\bg_weather_day_cloudy.jpg",
+							"rotate": 0,
+							"x": 50,
+							"y": 50,
+							"color_format": "true-color-alpha",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"image_recolor": "#ffffff",
+									"image_recolor_opa": 0,
+									"image_opa": 255
+								}
+							]
+						}
+					],
 					"style": [
 						{
 							"part": "LV_PART_MAIN",
 							"state": "LV_STATE_DEFAULT",
 							"disable": false,
-							"image_recolor": "#ffffff",
-							"image_recolor_opa": 0,
-							"image_opa": 206
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 2,
+							"border_color": "#2195f6",
+							"border_opa": 255,
+							"radius": 0,
+							"bg_color": "#ffffff",
+							"bg_grad_color": "#ffffff",
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_dither_mode": "LV_DITHER_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"bg_opa": 255,
+							"padding_top": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"padding_right": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
 						}
 					],
 					"layerName": "home"
@@ -536,7 +701,7 @@
 					},
 					{
 						"trigger": "screen_loaded",
-						"dst": "x04p9fdy",
+						"dst": "b0u4mffx",
 						"action": {
 							"load_screen": {
 								"ische": false,
@@ -648,11 +813,11 @@
 							},
 							"move": {
 								"ische": true,
-								"value_x": -544,
+								"value_x": -480,
 								"value_y": 0,
 								"delay": 0,
 								"duration": 10000,
-								"repeat_count": -1,
+								"repeat_count": 0,
 								"repeat_delay": 0,
 								"playback_time": 0,
 								"playback_delay": 0,
@@ -772,15 +937,15 @@
 						{
 							"src": "home",
 							"trigger": "screen_loaded",
-							"dst": "home_bg_weather",
-							"dst_type": "img",
+							"dst": "home_background",
+							"dst_type": "cont",
 							"src_screen": "home",
 							"action": "move",
-							"value_x": -544,
+							"value_x": -480,
 							"value_y": 0,
 							"delay": 0,
 							"duration": 10000,
-							"repeat_count": -1,
+							"repeat_count": 0,
 							"repeat_delay": 0,
 							"playback_time": 0,
 							"playback_delay": 0,
@@ -815,10 +980,11 @@
 				],
 				"widgets": [
 					{
-						"name": "home_bg_weather",
-						"id": "x04p9fdy",
-						"type": "img",
+						"name": "home_background",
+						"id": "b0u4mffx",
+						"type": "cont",
 						"visible": true,
+						"scrollbar_mode": "OFF",
 						"flag": [
 							"LV_OBJ_FLAG_FLOATING"
 						],
@@ -831,22 +997,198 @@
 							320
 						],
 						"default_style": false,
-						"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\import\\image\\bg_weather_day_clear.jpg",
-						"color_format": "true-color-alpha",
-						"rotate": 0,
-						"pivot": "50,50",
-						"use_fs": false,
-						"fs_type": "flash",
-						"img_flash_path": "F:/bg_weather_day_clear.jpg",
-						"img_sd_path": "S:/bg_weather_day_clear.jpg",
+						"child": [
+							{
+								"name": "home_bg_weather_day_cloudy",
+								"id": "x04p9fdy",
+								"type": "img",
+								"visible": true,
+								"flag": [
+									"LV_OBJ_FLAG_FLOATING"
+								],
+								"pos": [
+									0,
+									0
+								],
+								"size": [
+									1024,
+									320
+								],
+								"default_style": false,
+								"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\src\\import\\image\\bg_weather_day_cloudy.jpg",
+								"color_format": "true-color-alpha",
+								"rotate": 0,
+								"pivot": "50,50",
+								"use_fs": false,
+								"fs_type": "flash",
+								"img_flash_path": "F:/bg_weather_day_cloudy.jpg",
+								"img_sd_path": "S:/bg_weather_day_cloudy.jpg",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"image_recolor": "#ffffff",
+										"image_recolor_opa": 0,
+										"image_opa": 255
+									}
+								]
+							},
+							{
+								"name": "home_bg_weather_day_clear",
+								"id": "xbebxdyb",
+								"type": "img",
+								"visible": true,
+								"flag": [
+									"LV_OBJ_FLAG_FLOATING"
+								],
+								"pos": [
+									0,
+									0
+								],
+								"size": [
+									1024,
+									320
+								],
+								"default_style": false,
+								"img_path": "C:\\Users\\lmarqs\\workspace\\mojodojocasahouse\\smartwatch\\src\\import\\image\\bg_weather_day_clear.jpg",
+								"color_format": "true-color-alpha",
+								"rotate": 0,
+								"pivot": "50,50",
+								"use_fs": false,
+								"fs_type": "flash",
+								"img_flash_path": "F:/bg_weather_day_clear.jpg",
+								"img_sd_path": "S:/bg_weather_day_clear.jpg",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"image_recolor": "#ffffff",
+										"image_recolor_opa": 0,
+										"image_opa": 255
+									}
+								]
+							}
+						],
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
 								"state": "LV_STATE_DEFAULT",
 								"disable": false,
-								"image_recolor": "#ffffff",
-								"image_recolor_opa": 0,
-								"image_opa": 206
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 2,
+								"border_color": "#2195f6",
+								"border_opa": 255,
+								"radius": 0,
+								"bg_color": "#ffffff",
+								"bg_grad_color": "#ffffff",
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_dither_mode": "LV_DITHER_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"bg_opa": 255,
+								"padding_top": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"padding_right": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							}
+						]
+					},
+					{
+						"name": "home_digital_clock",
+						"id": "ciyi05x8",
+						"type": "digital_clock",
+						"visible": true,
+						"flag": [],
+						"pos": [
+							75,
+							15
+						],
+						"size": [
+							546,
+							139
+						],
+						"default_style": false,
+						"inital_time": "19:38:05",
+						"show_second": true,
+						"use_ampm": false,
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"radius": 0,
+								"text_align": "LV_TEXT_ALIGN_CENTER",
+								"text_color": "#ffffff",
+								"font": 120,
+								"font_family": "montserratMedium",
+								"letter_space": 0,
+								"bg_color": "#000000",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_dither_mode": "LV_DITHER_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"padding_top": 7,
+								"padding_right": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 170,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DISABLED",
+								"disable": true,
+								"radius": 0,
+								"text_align": "LV_TEXT_ALIGN_CENTER",
+								"text_color": "#ffffff",
+								"font": 16,
+								"font_family": "montserratMedium",
+								"letter_space": 0,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 255,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_dither_mode": "LV_DITHER_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"padding_top": 7,
+								"padding_right": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0
 							}
 						]
 					},

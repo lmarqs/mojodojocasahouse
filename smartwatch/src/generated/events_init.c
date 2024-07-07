@@ -23,7 +23,7 @@ static void home_event_handler (lv_event_t *e)
 	switch (code) {
 	case LV_EVENT_SCREEN_LOADED:
 	{
-		ui_move_animation(guider_ui.home_bg_weather, 10000, 0, -544, 0, &lv_anim_path_linear, LV_ANIM_REPEAT_INFINITE, 0, 0, 0, NULL, NULL, NULL);
+		ui_move_animation(guider_ui.home_background, 10000, 0, -480, 0, &lv_anim_path_linear, 0, 0, 0, 0, NULL, NULL, NULL);
 		break;
 	}
 	default:

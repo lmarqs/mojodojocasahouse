@@ -1,42 +1,29 @@
-/*
-* Copyright 2023 NXP
-* NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be used strictly in
-* accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
-* activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
-* comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
-* terms, then you may not retain, install, activate or otherwise use the software.
-*/
-
-
-/*********************
- *      INCLUDES
- *********************/
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "lvgl.h"
 #include "custom.h"
 
-/*********************
- *      DEFINES
- *********************/
+lv_ui *global_ui;
 
-/**********************
- *      TYPEDEFS
- **********************/
+static void custom_timer_cb(lv_timer_t *timer)
+{
+  // static time_t current_time_epoch;
 
-/**********************
- *  STATIC PROTOTYPES
- **********************/
+  // time(&current_time_epoch);
 
-/**********************
- *  STATIC VARIABLES
- **********************/
+  // static char text[64];
 
-/**
- * Create a demo application
- */
+  // tm *current_time_breakdown = localtime(&current_time_epoch);
+
+  // strftime(text, sizeof(text), "%a %d/%m/%y\n%H:%M:%S", current_time_breakdown);
+
+  // lv_label_set_text(global_ui->home_label_clock, text);
+}
 
 void custom_init(lv_ui *ui)
 {
-    /* Add your codes here */
+  global_ui = ui;
+  lv_timer_create(custom_timer_cb, 1000, NULL);
 }
 
