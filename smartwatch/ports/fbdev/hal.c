@@ -63,7 +63,8 @@ void hal_loop(void)
 {
   while (true)
   {
-    lv_timer_handler();
+    // lv_timer_handler();
+    lv_task_handler();
     usleep(5000);
   }
 }
