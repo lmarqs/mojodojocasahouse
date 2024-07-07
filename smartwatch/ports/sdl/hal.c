@@ -33,7 +33,9 @@ void hal_setup(void)
   lv_disp_draw_buf_init(&disp_buf, buf, NULL, SDL_HOR_RES * 10);
 
   static lv_disp_drv_t disp_drv;
+
   lv_disp_drv_init(&disp_drv);
+
   disp_drv.flush_cb = sdl_display_flush;
   disp_drv.draw_buf = &disp_buf;
   disp_drv.hor_res = SDL_HOR_RES;
