@@ -6,10 +6,8 @@
         "${workspaceFolder}/**"
       ],
       "defines": [
-        "LV_CONF_SKIP=1",
-        "LV_USE_DEMO_RENDER=1",
-        "LV_USE_SDL=1",
-        "LV_FONT_MONTSERRAT_48=1"
+        "USE_SDL=1",
+        "USE_FBDEV=1"
       ],
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu23",

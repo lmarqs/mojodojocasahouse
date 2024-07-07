@@ -7,8 +7,6 @@
 #include "lvgl/lvgl.h"
 #include "lv_drivers/display/fbdev.h"
 
-#include "lv_drv_conf.h"
-
 uint32_t fbdev_hal_tick_get(void)
 {
   static uint64_t start_ms = 0;
@@ -37,6 +35,8 @@ uint32_t fbdev_hal_tick_get(void)
 
 void hal_setup(void)
 {
+  LV_LOG_USER("Starting FBDEV HAL: %s %dx%d", FBDEV_PATH, FBDEV_HOR_RES, FBDEV_VER_RES);
+
   fbdev_init();
 
   static lv_color_t buf[128 * 1024];

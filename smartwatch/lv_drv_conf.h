@@ -320,9 +320,9 @@
 #endif
 
 #if USE_FBDEV
-#  define FBDEV_PATH        "/dev/fb1"
-#  define FBDEV_HOR_RES     480
-#  define FBDEV_VER_RES     320
+#  define FBDEV_PATH    "/dev/fb1"
+#  define FBDEV_HOR_RES 480
+#  define FBDEV_VER_RES 320
 
 #  define LV_TICK_CUSTOM_INCLUDE       <stdint.h>          /*Header for the system time function*/
 #  define LV_TICK_CUSTOM_SYS_TIME_EXPR (custom_tick_get()) /*Expression evaluating to current system time in ms*/
@@ -332,11 +332,11 @@
  *  FreeBSD frame buffer device (/dev/fbx)
  *.........................................*/
 #ifndef USE_BSD_FBDEV
-#  define USE_BSD_FBDEV		0
+#  define USE_BSD_FBDEV 0
 #endif
 
 #if USE_BSD_FBDEV
-# define FBDEV_PATH		"/dev/fb0"
+# define FBDEV_PATH "/dev/fb1"
 #endif
 
 /*-----------------------------------------
