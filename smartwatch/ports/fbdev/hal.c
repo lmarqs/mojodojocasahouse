@@ -66,6 +66,7 @@ void hal_loop(void)
   while (true)
   {
     lv_timer_handler();
+    lv_tick_inc(fbdev_hal_tick_get());
     usleep(5000);
   }
 }
