@@ -320,7 +320,7 @@
 #endif
 
 #if USE_FBDEV
-#  define FBDEV_PATH        "/dev/fb0"
+#  define FBDEV_PATH        "/dev/fb1"
 #  define FBDEV_HOR_RES     480
 #  define FBDEV_VER_RES     320
 
