@@ -11,6 +11,8 @@ uint32_t fbdev_hal_tick_get(void)
 {
   static uint64_t start_ms = 0;
 
+  LV_LOG_USER("start_ms: %d", start_ms);
+
   if (start_ms == 0)
   {
     struct timeval tv_start;
