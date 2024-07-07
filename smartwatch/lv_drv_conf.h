@@ -323,10 +323,6 @@
 #  define FBDEV_PATH    "/dev/fb1"
 #  define FBDEV_HOR_RES 480
 #  define FBDEV_VER_RES 320
-
-#  define LV_TICK_CUSTOM 1
-#  define LV_TICK_CUSTOM_INCLUDE       <stdint.h>          /*Header for the system time function*/
-#  define LV_TICK_CUSTOM_SYS_TIME_EXPR (fbdev_hal_tick_get()) /*Expression evaluating to current system time in ms*/
 #endif
 
 /*-----------------------------------------
