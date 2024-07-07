@@ -1,17 +1,3 @@
-//
-// add_compile_definitions(USE_SDL=1)
-// add_compile_definitions(MONITOR_ZOOM=1)
-// add_compile_definitions(SDL_HOR_RES=480)
-// add_compile_definitions(SDL_VER_RES=320)
-
-// add_compile_definitions(LV_CONF_SKIP=1)
-// add_compile_definitions(LV_CONF_INCLUDE_SIMPLE=1)
-// add_compile_definitions(LV_LVGL_H_INCLUDE_SIMPLE=1)
-// add_compile_definitions(LV_DRV_NO_CONF=1)
-// # add_compile_definitions(LV_MEM_CUSTOM=1)
-// # add_compile_definitions(LV_MEM_SIZE="(128U * 1024U)")
-// add_compile_definitions(LV_FONT_MONTSERRAT_48=1)
-
 /**
  * @file lv_conf.h
  * Configuration file for v8.3.11
@@ -756,7 +742,7 @@
 *==================*/
 
 /*Enable the examples to be built with the library*/
-#define LV_BUILD_EXAMPLES 1
+#define LV_BUILD_EXAMPLES 0
 
 /*===================
  * DEMO USAGE
