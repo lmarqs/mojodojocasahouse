@@ -35,7 +35,7 @@ uint32_t fbdev_hal_tick_get(void)
 
 void hal_setup(void)
 {
-  LV_LOG_USER("Starting FBDEV HAL: %s %s %dx%d", FBDEV_PATH, LV_TICK_CUSTOM_SYS_TIME_EXPR, FBDEV_HOR_RES, FBDEV_VER_RES);
+  LV_LOG_USER("Starting FBDEV HAL: %s %d %dx%d", FBDEV_PATH, LV_TICK_CUSTOM_SYS_TIME_EXPR, FBDEV_HOR_RES, FBDEV_VER_RES);
 
   fbdev_init();
 
