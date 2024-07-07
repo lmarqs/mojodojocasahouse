@@ -1,0 +1,1 @@
+GEN_CSRCS += _bg_weather_day_clear_alpha_1024x320.c
