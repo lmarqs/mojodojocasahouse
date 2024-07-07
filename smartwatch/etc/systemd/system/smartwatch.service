@@ -1,10 +1,10 @@
 [Unit]
-Description=iotserver
+Description=smartwatch
 
 [Service]
 User=root
 WorkingDirectory=/bin
-ExecStart=/bin/iotserver
+ExecStart=/bin/smartwatch
 Restart=always
 RestartSec=3
 
