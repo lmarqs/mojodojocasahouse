@@ -728,7 +728,8 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					]
+					],
+					"layerName": "home"
 				}
 			],
 			"event": {
@@ -1100,7 +1101,8 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 0
 				}
-			]
+			],
+			"layerName": "home"
 		}
 	],
 	"Application": {
