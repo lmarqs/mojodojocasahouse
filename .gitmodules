@@ -1,3 +1,6 @@
 [submodule "iotserver/LCD-show"]
 	path = iotserver/LCD-show
 	url = https://github.com/goodtft/LCD-show
+[submodule "smartwatch/vendors"]
+	path = smartwatch/vendors
+	url = git@github.com:goodtft/LCD-show.git
