@@ -7,34 +7,6 @@
 #include "lvgl/lvgl.h"
 #include "lv_drivers/display/fbdev.h"
 
-uint32_t fbdev_hal_tick_get(void)
-{
-  static uint64_t start_ms = 0;
-
-  LV_LOG_USER("start_ms: %d", start_ms);
-
-  if (start_ms == 0)
-  {
-    struct timeval tv_start;
-
-    gettimeofday(&tv_start, NULL);
-
-    start_ms = (tv_start.tv_sec * 1000000 + tv_start.tv_usec) / 1000;
-  }
-
-  struct timeval tv_now;
-
-  gettimeofday(&tv_now, NULL);
-
-  uint64_t now_ms;
-
-  now_ms = (tv_now.tv_sec * 1000000 + tv_now.tv_usec) / 1000;
-
-  uint32_t time_ms = now_ms - start_ms;
-
-  return time_ms;
-}
-
 void hal_setup(void)
 {
   LV_LOG_USER("[FBDEV] setting up: %s %dx%d", FBDEV_PATH, FBDEV_HOR_RES, FBDEV_VER_RES);
@@ -66,7 +38,7 @@ void hal_loop(void)
   while (true)
   {
     lv_timer_handler();
-    lv_tick_inc(fbdev_hal_tick_get());
+    lv_tick_inc(5);
     usleep(5000);
   }
 }
