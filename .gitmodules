@@ -1,0 +1,3 @@
+[submodule "LCD-show"]
+	path = LCD-show
+	url = https://github.com/goodtft/LCD-show.git
