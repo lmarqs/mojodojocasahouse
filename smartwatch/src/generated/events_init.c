@@ -16,6 +16,24 @@
 #endif
 
 
+static void home_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_SCREEN_LOADED:
+	{
+		ui_move_animation(guider_ui.home_background, 10000, 0, -400, 0, &lv_anim_path_linear, LV_ANIM_REPEAT_INFINITE, 5000, 0, 0, NULL, NULL, NULL);
+		break;
+	}
+	default:
+		break;
+	}
+}
+void events_init_home(lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->home, home_event_handler, LV_EVENT_ALL, ui);
+}
 
 void events_init(lv_ui *ui)
 {
