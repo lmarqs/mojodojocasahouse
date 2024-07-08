@@ -56,7 +56,7 @@ install(FILES ${CMAKE_BINARY_DIR}/bin/smartwatch
 )
 
 install(FILES ${CMAKE_BINARY_DIR}/etc/systemd/system/smartwatch.service
-  DESTINATION etc/systemd/system
+  DESTINATION /etc/systemd/system
   PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
   COMPONENT smartwatch
 )
