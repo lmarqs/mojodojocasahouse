@@ -12,6 +12,8 @@ if("$ENV{LV_DRIVER}" STREQUAL "sdl")
 elseif("$ENV{LV_DRIVER}" STREQUAL "fbdev")
   add_compile_definitions(USE_FBDEV=1)
   add_library(ports ${CMAKE_SOURCE_DIR}/ports/fbdev/hal.c)
+else()
+  message( FATAL_ERROR "You must specify LV_DRIVER=(sdl|fbdev)" )
 endif()
 
 target_include_directories(ports PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/ports/include)
@@ -45,5 +47,16 @@ target_link_libraries(ports
   PUBLIC lv_drivers
 )
 
-# target_link_libraries(smartwatch PRIVATE )
-# target_link_libraries(ports PRIVATE lv_drivers)
+install(TARGETS smartwatch RUNTIME DESTINATION bin)
+
+install(FILES ${CMAKE_BINARY_DIR}/bin/smartwatch
+  DESTINATION /bin
+  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_EXECUTE WORLD_EXECUTE
+  COMPONENT smartwatch
+)
+
+install(FILES ${CMAKE_BINARY_DIR}/etc/systemd/system/smartwatch.service
+  DESTINATION etc/systemd/system
+  PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+  COMPONENT smartwatch
+)
