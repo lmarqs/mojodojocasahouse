@@ -4,7 +4,7 @@ Description=smartwatch
 [Service]
 User=root
 WorkingDirectory=/bin
-ExecStartPre=/bin/sh -c 'while [ $(ls /dev/fb* | wc -l) -lt 1 ]; do echo "/dev/fb* not found" && sleep 1; done'
+ExecStartPre=/bin/sh -c 'while [ $(ls /dev/fb1 | wc -l) -lt 1 ]; do echo "/dev/fb* not found" && sleep 1; done'
 ExecStart=/bin/smartwatch
 
 Restart=always
