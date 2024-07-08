@@ -1,8 +1,0 @@
-[Unit]
-Description=smartwatch
-
-[Timer]
-OnBootSec=1min
-
-[Install]
-WantedBy=timers.target
