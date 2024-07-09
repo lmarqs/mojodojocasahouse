@@ -728,8 +728,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "home"
+					]
 				}
 			],
 			"event": {
@@ -1027,7 +1026,7 @@
 								"delay": 0,
 								"duration": 10000,
 								"repeat_count": -1,
-								"repeat_delay": 5000,
+								"repeat_delay": 0,
 								"playback_time": 0,
 								"playback_delay": 0,
 								"start_cb": "",
@@ -1039,12 +1038,12 @@
 								"ische": false,
 								"width": 0,
 								"height": 0,
-								"delay": 0,
-								"duration": 1000,
-								"repeat_count": 0,
+								"delay": 1000,
+								"duration": 0,
+								"repeat_count": -1,
 								"repeat_delay": 0,
 								"playback_time": 0,
-								"playback_delay": 0,
+								"playback_delay": 5000,
 								"start_cb": "",
 								"ready_cb": "",
 								"deleted_cb": "",
@@ -1101,8 +1100,7 @@
 					"bg_img_recolor": "#000000",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "home"
+			]
 		}
 	],
 	"Application": {
@@ -1155,7 +1153,7 @@
 							"delay": 0,
 							"duration": 10000,
 							"repeat_count": -1,
-							"repeat_delay": 5000,
+							"repeat_delay": 0,
 							"playback_time": 0,
 							"playback_delay": 0,
 							"start_cb": "",
