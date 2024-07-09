@@ -12,10 +12,13 @@ t0 = next_heartbeat = time.monotonic()
 
 while True:
     for message in decoder.read():
-        print(f"t={time.monotonic() - t0:.3} New Message")
-        print("Heard", len(message.pulses), "Pulses:", message.pulses)
+        # print(f"t={time.monotonic() - t0:.3} New Message")
+        # print("Heard", len(message.pulses), "Pulses:", message.pulses)
         if isinstance(message, adafruit_irremote.IRMessage):
-            print("Decoded:", message.code)
+          decoded = decoder.decode_bits(message.pulses, debug=False)
+          if len(decoded) > 3:
+            command = decoded[2]
+            print("Command:", command)
         elif isinstance(message, adafruit_irremote.NECRepeatIRMessage):
             print("NEC repeat!")
         elif isinstance(message, adafruit_irremote.UnparseableIRMessage):
