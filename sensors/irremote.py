@@ -15,9 +15,8 @@ while True:
         # print(f"t={time.monotonic() - t0:.3} New Message")
         # print("Heard", len(message.pulses), "Pulses:", message.pulses)
         if isinstance(message, adafruit_irremote.IRMessage):
-          decoded = decoder.decode_bits(message.pulses, debug=False)
-          if len(decoded) > 3:
-            command = decoded[2]
+          if len(message.code) > 3:
+            command = message.code[2]
             print("Command:", command)
         elif isinstance(message, adafruit_irremote.NECRepeatIRMessage):
             print("NEC repeat!")
