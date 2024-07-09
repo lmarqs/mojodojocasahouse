@@ -25,5 +25,5 @@ while True:
     # This heartbeat confirms that we are not blocked somewhere above.
     t = time.monotonic()
     if t > next_heartbeat:
-        print(f"t={time.monotonic() - t0:.3} Heartbeat")
+        # print(f"t={time.monotonic() - t0:.3} Heartbeat")
         next_heartbeat = t + 0.1
