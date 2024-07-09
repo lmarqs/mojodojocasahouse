@@ -1,34 +1,53 @@
+#include <pthread.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/un.h>
+#include <sys/socket.h>
+
 #include "lvgl.h"
 #include "custom.h"
+#include "server.h"
 
-lv_ui *global_ui;
+static lv_ui *custom_ui;
 
 static void custom_timer_cb(lv_timer_t *timer)
 {
   static time_t current_time_epoch;
 
+  static struct tm *current_time_breakdown = NULL;
+
+  static uint8_t buf[64];
+
   time(&current_time_epoch);
 
-  struct tm *current_time_breakdown = localtime(&current_time_epoch);
+  current_time_breakdown = localtime(&current_time_epoch);
 
-  static char text[64];
-  
-  strftime(text, sizeof(text), "%H:%M", current_time_breakdown);
+  strftime(buf, sizeof(buf), "%H:%M", current_time_breakdown);
 
-  lv_label_set_text(global_ui->home_label_clock, text);
-  
-  strftime(text, sizeof(text), "%a %d/%m/%y", current_time_breakdown);
+  lv_label_set_text(custom_ui->home_label_clock, buf);
 
-  lv_label_set_text(global_ui->home_label_calendar, text);
+  strftime(buf, sizeof(buf), "%a %d/%m/%y", current_time_breakdown);
+
+  lv_label_set_text(custom_ui->home_label_calendar, buf);
 }
 
+static struct sockaddr_un custom_server_addr = {
+    .sun_family = AF_UNIX,
+    .sun_path = "/tmp/smartwatch.sock"};
+
+static void custom_server_callback(uint8_t * buf, size_t len) {
+  sprintf(buf, "%d°", buf[0]);
+
+  lv_label_set_text(custom_ui->home_label_temp, buf);
+}
 
 void custom_init(lv_ui *ui)
 {
-  global_ui = ui;
-  lv_timer_create(custom_timer_cb, 1000, NULL);
-}
+  custom_ui = ui;
 
+  lv_timer_create(custom_timer_cb, 1000, NULL);
+
+  custom_server_create(&custom_server_addr, &custom_server_callback);
+}
