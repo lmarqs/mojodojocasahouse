@@ -38,7 +38,7 @@ static struct sockaddr_un custom_server_addr = {
     .sun_path = "/tmp/smartwatch.sock"};
 
 static void custom_server_callback(uint8_t * buf, size_t len) {
-  sprintf(buf, "%d°", buf[0]);
+  sprintf(buf, "%d°", (int8_t) buf[0]);
 
   lv_label_set_text(custom_ui->home_label_temp, buf);
 }
