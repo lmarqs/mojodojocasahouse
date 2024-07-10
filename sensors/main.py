@@ -10,4 +10,4 @@ with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
 
     while True:
         time.sleep(1)
-        s.sendall(bytearray([dht.temperature]))
+        s.sendall("T:{:.0f}".format(dht.temperature))
