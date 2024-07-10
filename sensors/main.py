@@ -3,7 +3,7 @@ import board
 import socket
 import time
 
-dht = adafruit_dht.DHT11(board.D27)
+dht = adafruit_dht.DHT11(board.D23)
 
 with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
     s.connect("/tmp/smartwatch.sock")
