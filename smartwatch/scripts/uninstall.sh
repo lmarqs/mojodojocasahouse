@@ -12,6 +12,6 @@ cat install_manifest_smartwatch.txt
 
 cat install_manifest_smartwatch.txt | xargs sudo rm -rf
 
-echo "Reloading systemctl..."
+echo "\nReloading systemctl..."
 
 sudo systemctl daemon-reload

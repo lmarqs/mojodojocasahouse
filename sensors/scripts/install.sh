@@ -1,15 +1,15 @@
 #!/bin/sh
 
-echo "Installing smartwatch files..."
+echo "Installing sensors files..."
 
-sudo cmake --install . --component smartwatch
+sudo cmake --install . --component sensors
 
-echo "Reloading installing and running smartwatch service..."
+echo "Reloading installing and running sensors service..."
 
 sudo systemctl daemon-reload
 
-sudo systemctl stop smartwatch.service
+sudo systemctl stop sensors.service
 
-sudo systemctl enable smartwatch.service
+sudo systemctl enable sensors.service
 
-sudo systemctl start smartwatch.service
+sudo systemctl start sensors.service
