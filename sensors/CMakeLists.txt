@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.20.0)
 
-project(smartwatch LANGUAGES C)
+project(sensors LANGUAGES C)
 
-install(TARGETS smartwatch RUNTIME DESTINATION bin)
+install(TARGETS sensors RUNTIME DESTINATION bin)
 
-install(FILES ${CMAKE_BINARY_DIR}/bin/smartwatch
+install(FILES ${CMAKE_BINARY_DIR}/bin/sensors
   DESTINATION /bin
   PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_EXECUTE WORLD_EXECUTE
-  COMPONENT smartwatch
+  COMPONENT sensors
 )
 
-install(FILES ${CMAKE_BINARY_DIR}/etc/systemd/system/smartwatch.service
+install(FILES ${CMAKE_BINARY_DIR}/etc/systemd/system/sensors.service
   DESTINATION /etc/systemd/system
   PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
-  COMPONENT smartwatch
+  COMPONENT sensors
 )
