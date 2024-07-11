@@ -39,8 +39,7 @@ static struct sockaddr_un custom_server_addr = {
 
 static void custom_server_callback(uint8_t *buf, size_t len)
 {
-  sprintf(buf, "%d°", (int8_t)buf[0]);
-
+  buf[len] = '\0';
   lv_label_set_text(custom_ui->home_label_temp, buf);
 }
 

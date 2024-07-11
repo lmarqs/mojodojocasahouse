@@ -21,8 +21,6 @@ static void *listening_thread(void *raw_args)
 {
   struct connection_listening_thread_args *args = (struct connection_listening_thread_args *)raw_args;
 
-  printf("args: %d %d %d\n", args, args->callback, args->server_fd);
-
   while (true)
   {
     uint32_t sock_len = 0;
@@ -33,8 +31,6 @@ static void *listening_thread(void *raw_args)
 
     uint8_t buf[0xFF];
     size_t buf_len = sizeof(buf);
-
-    memset(buf, 0, buf_len);
 
     ssize_t data_len = 0;
 
