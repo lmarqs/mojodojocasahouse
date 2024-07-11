@@ -2,7 +2,9 @@
 
 echo "Installing sensors files..."
 
-sudo cmake --install . --component sensors
+sudo cp etc/systemd/system/sensors.service /etc/systemd/system/sensors.service
+
+sudo chmod 644 /etc/systemd/system/sensors.service
 
 echo "Reloading installing and running sensors service..."
 
