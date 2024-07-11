@@ -5,7 +5,7 @@ Description=smartwatch
 User=root
 WorkingDirectory=/bin
 ExecStartPre=/bin/sh -c 'while [ $(ls /tmp/smartwatch.sock | wc -l) -lt 1 ]; do echo "/tmp/smartwatch.sock not found" && sleep 1; done'
-ExecStart=/home/lmarqs/.venv/bin/python3 /home/lmarqs/mojodojocasahouse/sensors/main.py
+ExecStart=/home/lmarqs/env/bin/python3 /home/lmarqs/mojodojocasahouse/sensors/main.py
 
 Restart=always
 RestartSec=3
