@@ -2,7 +2,7 @@ import board
 import digitalio
 import time
 
-sensor = digitalio.DigitalInOut(board.D24)
+sensor = digitalio.DigitalInOut(board.D25)
 sensor.direction = digitalio.Direction.INPUT
 
 while True:
