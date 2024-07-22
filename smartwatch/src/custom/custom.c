@@ -45,7 +45,7 @@ static void custom_server_callback(uint8_t *buf, size_t len)
 
   sscanf((char *)buf, "T:%f", &t);
 
-  sprintf((char *)buf, "%.0f°", t);
+  sprintf((char *)buf, "%.1f°", t);
 
   lv_label_set_text(custom_ui->home_label_temp, buf);
 }
