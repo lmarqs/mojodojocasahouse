@@ -114,7 +114,7 @@ void setup_scr_home(lv_ui *ui)
 	lv_label_set_text(ui->home_label_temp, "0°");
 	lv_label_set_long_mode(ui->home_label_temp, LV_LABEL_LONG_CLIP);
 	lv_obj_set_pos(ui->home_label_temp, 13, 210);
-	lv_obj_set_size(ui->home_label_temp, 140, 80);
+	lv_obj_set_size(ui->home_label_temp, 180, 80);
 
 	//Write style for home_label_temp, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

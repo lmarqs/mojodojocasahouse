@@ -441,7 +441,7 @@
 							"top": 210,
 							"visible": true,
 							"flag": [],
-							"width": 140,
+							"width": 180,
 							"height": 80,
 							"default_style": false,
 							"text": "0°",
@@ -1014,7 +1014,7 @@
 									210
 								],
 								"size": [
-									140,
+									180,
 									80
 								],
 								"default_style": false,
