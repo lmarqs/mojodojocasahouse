@@ -65,11 +65,11 @@ void setup_scr_home(lv_ui *ui);
 LV_IMG_DECLARE(_bg_weather_day_clear_alpha_1024x320);
 LV_IMG_DECLARE(_bg_weather_day_cloudy_alpha_1024x320);
 
-LV_FONT_DECLARE(lv_font_montserratMedium_80)
+LV_FONT_DECLARE(lv_font_JetBrainsMonoRegular_80)
 LV_FONT_DECLARE(lv_font_montserratMedium_13)
-LV_FONT_DECLARE(lv_font_montserratMedium_120)
+LV_FONT_DECLARE(lv_font_JetBrainsMonoBold_120)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
-LV_FONT_DECLARE(lv_font_montserratMedium_40)
+LV_FONT_DECLARE(lv_font_JetBrainsMonoRegular_40)
 
 
 #ifdef __cplusplus

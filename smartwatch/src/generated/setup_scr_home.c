@@ -120,7 +120,7 @@ void setup_scr_home(lv_ui *ui)
 	lv_obj_set_style_border_width(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->home_label_temp, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->home_label_temp, &lv_font_montserratMedium_80, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_label_temp, &lv_font_JetBrainsMonoRegular_80, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->home_label_temp, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->home_label_temp, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -143,7 +143,7 @@ void setup_scr_home(lv_ui *ui)
 	lv_obj_set_style_border_width(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->home_label_clock, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->home_label_clock, &lv_font_montserratMedium_120, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_label_clock, &lv_font_JetBrainsMonoBold_120, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->home_label_clock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->home_label_clock, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->home_label_clock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -166,7 +166,7 @@ void setup_scr_home(lv_ui *ui)
 	lv_obj_set_style_border_width(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->home_label_calendar, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->home_label_calendar, &lv_font_montserratMedium_40, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_label_calendar, &lv_font_JetBrainsMonoRegular_40, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->home_label_calendar, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->home_label_calendar, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->home_label_calendar, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
