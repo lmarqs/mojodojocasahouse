@@ -2,6 +2,8 @@
 
 echo "Installing sensors files..."
 
+sudo cp bin/sensors /opt/mdch/bin/sensors
+
 sudo cp etc/systemd/system/sensors.service /etc/systemd/system/sensors.service
 
 sudo chmod 644 /etc/systemd/system/sensors.service
