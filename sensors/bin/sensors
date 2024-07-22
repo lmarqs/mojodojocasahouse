@@ -14,6 +14,7 @@ with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
         time.sleep(1)
         try:
             info = "T:{:.0f}".format(dht.temperature)
+            print(info)
             s.sendall(info.encode())
         except RuntimeError as e:
             print("Reading from DHT failure: ", e.args)
