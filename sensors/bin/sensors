@@ -1,4 +1,4 @@
-#!/opt/mdch/venvs/bin/python3
+#!/opt/mdch/venv/bin/python3
 
 import adafruit_dht
 import board
