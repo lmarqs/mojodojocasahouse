@@ -2,10 +2,14 @@
 
 import adafruit_dht
 import board
+import digitalio
 import socket
 import time
 
 dht = adafruit_dht.DHT11(board.D23)
+
+ldr = digitalio.DigitalInOut(board.D5)
+ldr.direction = digitalio.Direction.INPUT
 
 with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
     s.connect("/tmp/smartwatch.sock")
@@ -13,7 +17,7 @@ with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
     while True:
         time.sleep(1)
         try:
-            info = "T:{:.3f}".format(dht.temperature)
+            info = "T:{:.3f},H:{:.3f},L:{}".format(dht.temperature, dht.humidity, ldr.value)
             print(info)
             s.sendall(info.encode())
         except RuntimeError as e:
