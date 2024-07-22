@@ -54,7 +54,7 @@ void custom_init(lv_ui *ui)
 {
   custom_ui = ui;
 
-  lv_timer_create(custom_timer_cb, 500, NULL);
+  lv_timer_create(custom_timer_cb, 100, NULL);
 
   custom_server_create(&custom_server_addr, &custom_server_callback);
 }
