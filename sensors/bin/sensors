@@ -13,7 +13,7 @@ with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
     while True:
         time.sleep(1)
         try:
-            info = "T:{:.0f}".format(dht.temperature)
+            info = "T:{:.3f}".format(dht.temperature)
             print(info)
             s.sendall(info.encode())
         except RuntimeError as e:
