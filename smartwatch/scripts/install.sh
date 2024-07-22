@@ -2,6 +2,8 @@
 
 echo "Installing smartwatch files..."
 
+sudo mkdir -p /opt/mdch/bin
+
 sudo cmake --install . --component smartwatch
 
 echo "Reloading installing and running smartwatch service..."
