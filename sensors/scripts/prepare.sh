@@ -21,7 +21,6 @@ echo "Creating virtual env..."
 
 sudo python3 -m venv /opt/mdch/venv --system-site-packages
 
-
 echo "Installing python libs..."
 
 sudo /opt/mdch/venv/bin/pip3 install -r requirements.txt
