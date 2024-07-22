@@ -3,9 +3,9 @@ Description=smartwatch
 
 [Service]
 User=root
-WorkingDirectory=/usr/local/bin
+WorkingDirectory=/opt/mdch/bin
 ExecStartPre=/bin/sh -c 'while [ $(ls /dev/fb1 | wc -l) -lt 1 ]; do echo "/dev/fb1 not found" && sleep 1; done'
-ExecStart=/usr/local/bin/smartwatch
+ExecStart=/opt/mdch/bin/smartwatch
 
 Restart=always
 RestartSec=3
