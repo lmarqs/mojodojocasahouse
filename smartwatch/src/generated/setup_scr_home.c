@@ -111,16 +111,16 @@ void setup_scr_home(lv_ui *ui)
 
 	//Write codes home_label_temp
 	ui->home_label_temp = lv_label_create(ui->home_content);
-	lv_label_set_text(ui->home_label_temp, "0°");
+	lv_label_set_text(ui->home_label_temp, "0.0°");
 	lv_label_set_long_mode(ui->home_label_temp, LV_LABEL_LONG_CLIP);
-	lv_obj_set_pos(ui->home_label_temp, 13, 210);
-	lv_obj_set_size(ui->home_label_temp, 180, 80);
+	lv_obj_set_pos(ui->home_label_temp, 10, 210);
+	lv_obj_set_size(ui->home_label_temp, 240, 80);
 
 	//Write style for home_label_temp, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->home_label_temp, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->home_label_temp, &lv_font_JetBrainsMonoRegular_80, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->home_label_temp, &lv_font_montserratMedium_80, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->home_label_temp, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->home_label_temp, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->home_label_temp, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

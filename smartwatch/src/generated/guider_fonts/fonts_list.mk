@@ -1,1 +1,1 @@
-GEN_CSRCS += lv_font_JetBrainsMonoRegular_80.c lv_font_montserratMedium_13.c lv_font_JetBrainsMonoBold_120.c lv_font_montserratMedium_16.c lv_font_JetBrainsMonoRegular_40.c
+GEN_CSRCS += lv_font_montserratMedium_80.c lv_font_montserratMedium_13.c lv_font_JetBrainsMonoBold_120.c lv_font_montserratMedium_16.c lv_font_JetBrainsMonoRegular_40.c
