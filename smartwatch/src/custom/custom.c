@@ -24,7 +24,7 @@ static void custom_timer_cb(lv_timer_t *timer)
 
   current_time_breakdown = localtime(&current_time_epoch);
 
-  strftime(buf, sizeof(buf), "%H:%M", current_time_breakdown);
+  strftime(buf, sizeof(buf), current_time_breakdown->tm_sec % 2 ? "%H:%M" : "%H %M", current_time_breakdown);
 
   lv_label_set_text(custom_ui->home_label_clock, buf);
 
