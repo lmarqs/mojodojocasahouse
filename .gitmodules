@@ -1,3 +1,6 @@
+[submodule "IOTstack"]
+	path = IOTstack
+	url = https://github.com/SensorsIot/IOTstack.git
 [submodule "LCD-show"]
 	path = LCD-show
 	url = https://github.com/goodtft/LCD-show.git
@@ -7,6 +10,3 @@
 [submodule "smartwatch/lv_drivers"]
 	path = smartwatch/lv_drivers
 	url = https://github.com/lvgl/lv_drivers.git
-[submodule "IOTstack"]
-	path = IOTstack
-	url = https://github.com/SensorsIot/IOTstack.git
